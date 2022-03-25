@@ -1,27 +1,39 @@
 const categorias = [
   {
-    icono: "cafe",
-    nombre: "Café",
+    icono: "entradas",
+    nombre: "entradas",
   },
   {
-    icono: "hamburguesa",
-    nombre: "Hamburguesas",
+    icono: "piqueos",
+    nombre: "piqueos",
   },
   {
-    icono: "pizza",
-    nombre: "Pizzas",
+    icono: "criollo",
+    nombre: "criollo",
   },
   {
-    icono: "dona",
-    nombre: "Donas",
+    icono: "chifa",
+    nombre: "chifa",
   },
   {
-    icono: "pastel",
-    nombre: "Pasteles",
+    icono: "marino",
+    nombre: "marino",
   },
   {
-    icono: "galletas",
-    nombre: "Galletas",
+    icono: "pastas",
+    nombre: "pastas",
+  },
+  {
+    icono: "sopas",
+    nombre: "sopas",
+  },
+  {
+    icono: "bebidas",
+    nombre: "bebidas",
+  },
+  {
+    icono: "postres",
+    nombre: "postres",
   },
 ];
 

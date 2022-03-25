@@ -20,6 +20,7 @@ model Producto {
   nombre String
   precio Float
   imagen String
+  descripcion String
   categoria Categoria @relation(fields: [categoriaId], references: [id])
   categoriaId Int
 }
