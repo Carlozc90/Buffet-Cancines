@@ -18,7 +18,7 @@ export default function Layout({ children }) {
           <Sidebar />
         </aside>
 
-        <main>
+        <main className="w-3/4 h-screen overflow-y-scroll">
           <div className="p-10">{children}</div>
         </main>
       </div>
