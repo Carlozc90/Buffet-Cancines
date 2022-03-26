@@ -7,7 +7,7 @@ const Producto = ({ producto }) => {
       <Image
         width={250}
         height={300}
-        src={`/assets/img/${imagen}.jpg`}
+        src={`/assets/img/menu/${imagen}.jpg`}
         alt={`imagen ${nombre}`}
         className={"rounded-2xl"}
       />

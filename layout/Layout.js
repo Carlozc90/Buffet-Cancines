@@ -1,4 +1,6 @@
 import Head from "next/head";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
 
 export default function Layout({ children }) {
@@ -13,6 +15,8 @@ export default function Layout({ children }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Header />
+
       <div className="flex">
         <aside className="w-1/5">
           <Sidebar />
@@ -22,6 +26,8 @@ export default function Layout({ children }) {
           <div className="p-10">{children}</div>
         </main>
       </div>
+
+      <Footer />
     </>
   );
 }
