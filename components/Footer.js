@@ -18,7 +18,7 @@ const Footer = () => {
           <button className="mt-3">Ventas Corporativas</button>
         </div>
         <div>
-          <p className="mt-3">NOSOTROS</p>
+          <p className="">NOSOTROS</p>
           <button className="mt-3">Protocolos de Bioseguridad</button>
           <button className="mt-3">Trabaje con Nosotros</button>
         </div>
