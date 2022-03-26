@@ -1,29 +1,38 @@
 import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from "next/router";
 
 const Header = () => {
+  const router = useRouter();
   return (
-    <header className="w-full h-[100px] bg-gradient-to-r from-red-600 to-red-500   ">
-      <div className="ml-10 mt-[px] absolute">
+    <header className="w-full h-[100px] bg-gradient-to-r from-red-600 to-red-500">
+      <button
+        className="ml-10 absolute"
+        onClick={() => {
+          router.push("/");
+        }}
+      >
         <Image
           width={150}
           height={150}
           src={"/assets/img/img/logo.png"}
           alt="logo imagen"
         />
-      </div>
+      </button>
 
       <nav className="pl-[300px] h-full grid grid-cols-2">
         <div className="flex justify-center items-center  ">
           {[
-            ["carta", "/menu"],
+            ["carta", "/carta"],
             ["promociones", "/promociones"],
-            ["contacto", "/modalcontacto"],
+            ["contacto", "/contacto"],
           ].map(([title, url]) => (
             <button
               type="button"
               key={title}
               className={`mr-[30px] p-1 uppercase font-bold rounded-lg hover:text-gray-800 duration-300 hover:bg-red-700`}
+              onClick={() => {
+                router.push(url);
+              }}
             >
               {title}
             </button>

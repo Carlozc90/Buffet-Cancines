@@ -1,6 +1,6 @@
 import Layout from "../layout/Layout";
 
-export default function Home() {
+export default function Contacto() {
   return (
     <div>
       <Layout></Layout>

@@ -3,7 +3,7 @@ import Categoria from "./Categoria";
 
 const Sidebar = () => {
   const { categorias } = useBuffet();
-  console.log(categorias);
+  // console.log(categorias);
   return (
     <div className="mt-20">
       <div className="ml-10 mt-2">

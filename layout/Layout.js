@@ -2,8 +2,11 @@ import Head from "next/head";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
+import { useRouter } from "next/router";
 
-export default function Layout({ children }) {
+export default function Layout({ children, pagina }) {
+  const router = useRouter();
+  const { route } = router;
   return (
     <>
       <Head>
@@ -18,16 +21,22 @@ export default function Layout({ children }) {
       <Header />
 
       <div className="flex">
-        <aside className="w-1/5">
-          <Sidebar />
-        </aside>
+        {route === "/carta" && (
+          <aside className="w-1/5">
+            <Sidebar />
+          </aside>
+        )}
 
-        <main className="w-3/4 h-screen overflow-y-scroll">
+        <main
+          className={`h-screen ${
+            route === "/carta" && "w-3/4 h-screen overflow-y-scroll"
+          }`}
+        >
           <div className="p-10">{children}</div>
         </main>
       </div>
 
-      <Footer />
+      {route === "/carta" ? "" : <Footer />}
     </>
   );
 }
