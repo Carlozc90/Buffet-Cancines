@@ -41,7 +41,7 @@ const Header = () => {
 
         <div className="flex justify-center items-center mr-[px]">
           <button type="button" className={` `}>
-            <svg
+            {/* <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6 "
               fill="none"
@@ -54,13 +54,13 @@ const Header = () => {
                 strokeLinejoin="round"
                 d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
               />
-            </svg>
+            </svg> */}
           </button>
           <button
             type="button"
             className={`ml-11 flex items-center font-bold text-center`}
           >
-            <svg
+            {/* <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"
               fill="none"
@@ -73,7 +73,7 @@ const Header = () => {
                 strokeLinejoin="round"
                 d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
               />
-            </svg>
+            </svg> */}
             <div className="ml-2">
               <p>Bienvenido(a)</p>
               <p>Iniciar Sesión</p>

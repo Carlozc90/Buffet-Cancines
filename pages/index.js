@@ -1,11 +1,17 @@
+import Banner from "../components/Banner";
 import Carrucel from "../components/Carrucel";
+import NuestraCarta from "../components/NuestraCarta";
+import PedidoMas from "../components/PedidoMas";
 import Layout from "../layout/Layout";
 
 export default function Home() {
   return (
     <div>
       <Layout>
-        <Carrucel />
+        {/* <Carrucel /> */}
+        {/* <PedidoMas /> */}
+        {/* <Banner banner={"banner34"} /> */}
+        {/* <NuestraCarta /> */}
       </Layout>
     </div>
   );

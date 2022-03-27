@@ -15,9 +15,9 @@ const Carrucel = () => {
       showArrows={false}
       showStatus={false}
       showThumbs={false}
-      transitionTime={1000}
+      transitionTime={1500}
       stopOnHover={false}
-      width={"100%"}
+      // width={"100%"}
       emulateTouch
     >
       <div>
