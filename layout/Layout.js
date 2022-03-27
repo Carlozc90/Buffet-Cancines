@@ -32,7 +32,7 @@ export default function Layout({ children, pagina }) {
             route === "/carta" && "w-3/4 h-screen overflow-y-scroll"
           }`}
         >
-          <div className="p-10">{children}</div>
+          {children}
         </main>
       </div>
 

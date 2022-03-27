@@ -1,9 +1,12 @@
+import Carrucel from "../components/Carrucel";
 import Layout from "../layout/Layout";
 
 export default function Home() {
   return (
     <div>
-      <Layout></Layout>
+      <Layout>
+        <Carrucel />
+      </Layout>
     </div>
   );
 }
