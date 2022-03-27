@@ -10,7 +10,7 @@ const PedidoMas = () => {
       </p>
       <div className=" m-6 grid grid-cols-4 gap-4">
         {lomasPedido.map((pedido) => (
-          <Producto producto={pedido} key={pedido.nombre} />
+          <Producto padre={"pedidomas"} producto={pedido} key={pedido.nombre} />
         ))}
       </div>
     </div>

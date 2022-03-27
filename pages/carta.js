@@ -11,7 +11,7 @@ export default function Carta() {
         <p>personaliza tu pedido</p>
         <div className="grid grid-cols-3 gap-4">
           {categoriaActual?.productos?.map((producto) => (
-            <Producto key={producto.id} producto={producto} />
+            <Producto padre={"carta"} key={producto.id} producto={producto} />
           ))}
         </div>
       </Layout>

@@ -1,14 +1,20 @@
 import useBuffet from "../hooks/useBuffet";
+import Producto from "./Producto";
 
 const NuestraCarta = () => {
   const { categorias } = useBuffet();
   console.log(categorias);
   return (
-    <div className=" m-6 grid grid-cols-3 gap-4">
-      {/* {lomasPedido.map((pedido) => (
-        <Producto producto={pedido} key={pedido.nombre} />
-      ))} */}
-    </div>
+    <>
+      <p className="ml-6 my-14 text-red-600 uppercase text-4xl font-bold">
+        Nuestra Carta
+      </p>
+      <div className=" m-6 grid grid-cols-4 gap-4">
+        {categorias.map((cat) => (
+          <Producto padre={"nuestracarta"} producto={cat} key={cat.id} />
+        ))}
+      </div>
+    </>
   );
 };
 
