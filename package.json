@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@prisma/client": "^3.11.1",
+    "@tailwindcss/line-clamp": "^0.3.1",
     "@types/react": "^17.0.43",
     "axios": "^0.26.1",
     "next": "12.1.0",

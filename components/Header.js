@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <header className="w-full h-[100px] bg-gradient-to-r from-red-600 to-red-500">
       <button
-        className="ml-10 absolute"
+        className="ml-10 absolute z-50"
         onClick={() => {
           router.push("/");
         }}

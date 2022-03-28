@@ -20,8 +20,10 @@ const Producto = ({ producto, padre }) => {
         className={"rounded-2xl"}
       />
       <div className="p-5">
-        <h3 className="text-2xl font-bold uppercase">{nombre}</h3>
-        <p className="mt-5 text-left">{descripcion}</p>
+        <h3 className="text-xl font-bold uppercase h-[50px]">{nombre}</h3>
+        <p className="mt-5 text-left line-clamp-2 hover:line-clamp-none">
+          {descripcion}
+        </p>
         <div className="mt-5 flex justify-between ">
           {padre === "nuestracarta" ? (
             ""
