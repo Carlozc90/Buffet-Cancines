@@ -1,32 +1,36 @@
 
 generator client {
-  provider = "prisma-client-js"
+    provider        = "prisma-client-js"
+  previewFeatures = ["mongoDb"]
 }
 
 datasource db {
-  provider = "mysql"
+  provider = "mongodb"
   url      = env("DATABASE_URL")
 }
 
+
+
 model Categoria {
-  id Int @id @default(autoincrement())
+  id String @id @default(auto()) @map("_id") @db.ObjectId
   nombre String
   icono String
-  productos Producto[]
+  unico Int
+  productos Producto[] 
 }
 
 model Producto {
-  id Int @id @default(autoincrement())
+  id String @id @default(auto()) @map("_id") @db.ObjectId
   nombre String
   precio Float
   imagen String
   descripcion String
-  categoria Categoria @relation(fields: [categoriaId], references: [id])
+  categoria Categoria @relation(fields: [categoriaId], references: [unico])
   categoriaId Int
-}
+  }
 
 model Orden {
-  id Int @id @default(autoincrement())
+  id String @id @default(auto()) @map("_id") @db.ObjectId
   nombre String
   fecha String
   total Float
