@@ -45,6 +45,12 @@ const BuffetProvider = ({ children }) => {
   const [orden, setOrden] = useState([]);
   const [total, setTotal] = useState(0);
 
+  const [tagMenuimg, SetTagMenuimg] = useState([]);
+  const [tagBannerimg, SetTagBannerimg] = useState([]);
+  const [tagCarouselimg, SetTagCarouselimg] = useState([]);
+  const [tagCategoriaimg, SetTagCategoriaimg] = useState([]);
+  const [tagLogoimg, SetTagLogoimg] = useState([]);
+
   // funciones
   const obtenerCategorias = async () => {
     const { data } = await axios("/api/categorias");
@@ -109,6 +115,11 @@ const BuffetProvider = ({ children }) => {
         handleAgregarOrden,
         orden,
         total,
+        SetTagMenuimg,
+        SetTagBannerimg,
+        SetTagCarouselimg,
+        SetTagCategoriaimg,
+        SetTagLogoimg,
       }}
     >
       {children}
