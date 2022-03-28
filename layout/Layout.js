@@ -1,10 +1,19 @@
 import Head from "next/head";
+import Modal from "react-modal";
+
+import { useRouter } from "next/router";
+import useBuffet from "../hooks/useBuffet";
+
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
-import { useRouter } from "next/router";
+import CompoModal from "../components/CompoModal";
+
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Layout({ children, pagina }) {
+  const { modal } = useBuffet();
   const router = useRouter();
   const { route } = router;
   return (
@@ -36,7 +45,15 @@ export default function Layout({ children, pagina }) {
         </main>
       </div>
 
+      {modal && (
+        <Modal isOpen={modal} ariaHideApp={false}>
+          <CompoModal padre={"nuestracarta"} />
+        </Modal>
+      )}
+
       {route === "/carta" ? "" : <Footer />}
+
+      <ToastContainer />
     </>
   );
 }

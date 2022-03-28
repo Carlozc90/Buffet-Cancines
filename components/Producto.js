@@ -1,8 +1,11 @@
 import Image from "next/image";
 import { formatearDinero } from "../helpers";
+import useBuffet from "../hooks/useBuffet";
+
 const Producto = ({ producto, padre }) => {
   const { id, nombre, precio, imagen, descripcion, icono } = producto;
-  console.log(padre);
+  const { handleChangeModal, handleProducto } = useBuffet();
+  // console.log(padre);
   return (
     <div className="border p-3 text-center rounded">
       <Image
@@ -24,7 +27,13 @@ const Producto = ({ producto, padre }) => {
             ""
           ) : (
             <>
-              <button type="button" className="">
+              <button
+                type="button"
+                onClick={() => {
+                  handleChangeModal();
+                  handleProducto(producto);
+                }}
+              >
                 <p className="uppercase px-2 py-1 font-semibold border-2 border-red-600 text-red-600 rounded-2xl hover:bg-red-600 hover:text-white duration-300 ">
                   Ordenar
                 </p>

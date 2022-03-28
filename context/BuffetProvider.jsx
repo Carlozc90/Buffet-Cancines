@@ -1,5 +1,6 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 const BuffetContext = createContext();
 
@@ -39,7 +40,11 @@ const lomasPedido = [
 const BuffetProvider = ({ children }) => {
   const [categorias, setCategorias] = useState([]);
   const [categoriaActual, setCategoriaActual] = useState({});
+  const [modal, setModal] = useState(false);
+  const [producto, setProducto] = useState([]);
+  const [orden, setOrden] = useState([]);
 
+  // funciones
   const obtenerCategorias = async () => {
     const { data } = await axios("/api/categorias");
     setCategorias(data);
@@ -48,6 +53,29 @@ const BuffetProvider = ({ children }) => {
   const handleCategoriaClick = (id) => {
     const categoria = categorias.filter((cate) => cate.id === id);
     setCategoriaActual(categoria[0]);
+  };
+
+  const handleChangeModal = () => {
+    setModal(!modal);
+  };
+
+  const handleProducto = (product) => {
+    setProducto(product);
+  };
+
+  const handleAgregarOrden = (producto) => {
+    toast.success("Orden Agregada");
+    console.log(producto);
+
+    if (orden.some((product) => product.id === producto.id)) {
+      const ordenActualizado = orden.map((prod) =>
+        prod.id === producto.id ? producto : prod
+      );
+
+      setOrden(ordenActualizado);
+    } else {
+      setOrden([...orden, producto]);
+    }
   };
 
   // cuando la pagina esta lista
@@ -61,7 +89,18 @@ const BuffetProvider = ({ children }) => {
 
   return (
     <BuffetContext.Provider
-      value={{ categorias, handleCategoriaClick, categoriaActual, lomasPedido }}
+      value={{
+        categorias,
+        handleCategoriaClick,
+        categoriaActual,
+        lomasPedido,
+        handleChangeModal,
+        modal,
+        handleProducto,
+        producto,
+        handleAgregarOrden,
+        orden,
+      }}
     >
       {children}
     </BuffetContext.Provider>

@@ -3,7 +3,7 @@ import Producto from "./Producto";
 
 const NuestraCarta = () => {
   const { categorias } = useBuffet();
-  console.log(categorias);
+  // console.log(categorias);
   return (
     <>
       <p className="ml-6 my-14 text-red-600 uppercase text-4xl font-bold">
