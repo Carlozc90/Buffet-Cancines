@@ -43,6 +43,7 @@ const BuffetProvider = ({ children }) => {
   const [modal, setModal] = useState(false);
   const [producto, setProducto] = useState([]);
   const [orden, setOrden] = useState([]);
+  const [total, setTotal] = useState(0);
 
   // funciones
   const obtenerCategorias = async () => {
@@ -64,17 +65,16 @@ const BuffetProvider = ({ children }) => {
   };
 
   const handleAgregarOrden = (producto) => {
-    toast.success("Orden Agregada");
-    console.log(producto);
-
     if (orden.some((product) => product.id === producto.id)) {
       const ordenActualizado = orden.map((prod) =>
         prod.id === producto.id ? producto : prod
       );
 
       setOrden(ordenActualizado);
+      toast.success("Editado Correctamente");
     } else {
       setOrden([...orden, producto]);
+      toast.success("Orden Agregada");
     }
   };
 
@@ -86,6 +86,14 @@ const BuffetProvider = ({ children }) => {
   useEffect(() => {
     setCategoriaActual(categorias[0]);
   }, [categorias]);
+
+  useEffect(() => {
+    const resultado = orden.reduce(
+      (total, producto) => producto.precio * producto.cantidad + total,
+      0
+    );
+    setTotal(resultado);
+  }, [orden]);
 
   return (
     <BuffetContext.Provider
@@ -100,6 +108,7 @@ const BuffetProvider = ({ children }) => {
         producto,
         handleAgregarOrden,
         orden,
+        total,
       }}
     >
       {children}

@@ -1,8 +1,12 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { formatearDinero } from "../helpers";
+import useBuffet from "../hooks/useBuffet";
 
 const Header = () => {
   const router = useRouter();
+  const { total } = useBuffet();
+
   return (
     <header className="w-full h-[100px] bg-gradient-to-r from-red-600 to-red-500">
       <button
@@ -39,8 +43,14 @@ const Header = () => {
           ))}
         </div>
 
-        <div className="flex justify-center items-center mr-[px]">
-          <button type="button" className={` `}>
+        <div className="flex justify-center items-center ">
+          <button
+            type="button"
+            className="flex bg-yellow-400 rounded-full p-2"
+            onClick={() => {
+              router.push("/order");
+            }}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6 "
@@ -55,6 +65,10 @@ const Header = () => {
                 d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
               />
             </svg>
+
+            {total > 0 && (
+              <p className="ml-2 font-medium">{formatearDinero(total)}</p>
+            )}
           </button>
           <button
             type="button"

@@ -38,7 +38,7 @@ export default function Layout({ children, pagina }) {
 
         <main
           className={`${
-            route === "/carta" && "w-3/4 h-screen overflow-y-scroll"
+            route === "/carta" && "w-10/12 h-screen overflow-y-scroll"
           }`}
         >
           {children}

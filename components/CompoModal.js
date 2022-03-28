@@ -17,7 +17,6 @@ const CompoModal = ({ padre }) => {
   useEffect(() => {
     if (orden.some((product) => product.id === producto.id)) {
       const productoEdicion = orden.find((pedido) => pedido.id === producto.id);
-      console.log(productoEdicion, "edicion");
       setCantidad(productoEdicion.cantidad);
     }
   }, [producto, orden]);
