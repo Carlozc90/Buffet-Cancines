@@ -24,7 +24,7 @@ const PedidoMas = () => {
       <p className="ml-6 my-14 text-red-600 uppercase text-4xl font-bold">
         Lo más Pedido
       </p>
-      <div className=" m-6 grid grid-cols-4 gap-4">
+      <div className=" m-6 grid md:grid-cols-4 gap-4">
         {lomasPedido.map((pedido, i) => (
           <div key={i} className="border p-3 text-center rounded">
             {tagMenuimg.length && (

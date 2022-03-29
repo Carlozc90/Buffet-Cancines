@@ -23,12 +23,12 @@ const Header = () => {
         />
       </button>
 
-      <nav className="pl-[300px] h-full grid grid-cols-2">
+      <nav className="md:pl-[300px] pl-[150px] h-full grid md:grid-cols-2">
         <div className="flex justify-center items-center  ">
           {[
             ["carta", "/carta"],
             ["promociones", "/"],
-            ["contacto", "/contacto"],
+            ["contacto", "/"],
           ].map(([title, url]) => (
             <button
               type="button"

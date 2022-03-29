@@ -1,10 +1,10 @@
 import Layout from "../layout/Layout";
 import Image from "next/image";
 import useBuffet from "../hooks/useBuffet";
-import { formatearDinero } from "../helpers";
+import { formatearDinero, obtenerUrlhelper } from "../helpers";
 
 export default function Order() {
-  const { orden, total } = useBuffet();
+  const { orden, total, tagMenuimg } = useBuffet();
   return (
     <Layout>
       <div className="w-screen h-[150px] bg-gray-900 flex justify-center items-center text-center">
@@ -30,12 +30,12 @@ export default function Order() {
           </>
         ))}
       </div>
-      <div id="container" className="w-screen flex">
+      <div id="container" className="w-screen flex flex-col md:flex-row ">
         <div
-          className=""
-          style={{
-            width: "60%",
-          }}
+          className="md:w-3/5"
+          // style={{
+          //   width: "60%",
+          // }}
         >
           {orden?.map((pedido, i) => (
             <div key={i} className="border-b border-slate-400 mx-4 pb-4 mt-2">
@@ -46,7 +46,7 @@ export default function Order() {
                 <Image
                   width={250 / 1.2}
                   height={300 / 1.5}
-                  src={`/assets/img/menu/${pedido.imagen}.jpg`}
+                  src={obtenerUrlhelper(pedido.imagen, tagMenuimg)}
                   alt="logo imagen"
                   className="rounded-2xl"
                 />
@@ -86,10 +86,10 @@ export default function Order() {
           ))}
         </div>
         <div
-          className="  h-screen "
-          style={{
-            width: "40%",
-          }}
+          className="  h-screen md:w-2/5 "
+          // style={{
+          //   width: "40%",
+          // }}
         >
           <div className="bg-slate-200 mx-10 mt-6 rounded-2xl text-center uppercase">
             <h1 className="border-b border-red-600 mx-6 py-4 mb-6 text-red-600 font-bold">

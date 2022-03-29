@@ -12,3 +12,12 @@ export const obtenerNombre = (resultado) => {
 
   return nombre;
 };
+
+export const obtenerUrlhelper = (objimagen, array) => {
+  // console.log("1", obj);
+  // console.log("2", array);
+  const respuesta = array.find((items) => obtenerNombre(items) === objimagen);
+  const { secure_url: res } = respuesta;
+
+  return res;
+};

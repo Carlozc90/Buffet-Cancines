@@ -1,10 +1,10 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { formatearDinero } from "../helpers";
+import { formatearDinero, obtenerUrlhelper } from "../helpers";
 import useBuffet from "../hooks/useBuffet";
 
 const CompoModal = ({ padre }) => {
-  const { producto, handleChangeModal, handleAgregarOrden, orden } =
+  const { producto, handleChangeModal, handleAgregarOrden, orden, tagMenuimg } =
     useBuffet();
   const { imagen, nombre, descripcion, precio } = producto;
   const [cantidad, setCantidad] = useState(1);
@@ -46,7 +46,7 @@ const CompoModal = ({ padre }) => {
         <Image
           width={250}
           height={300}
-          src={padre === "nuestracarta" && `/assets/img/menu/${imagen}.jpg`}
+          src={obtenerUrlhelper(imagen, tagMenuimg)}
           alt={`imagen ${nombre}`}
           className={"rounded-2xl"}
         />

@@ -1,7 +1,7 @@
 import Image from "next/image";
 const Footer = () => {
   return (
-    <div className="w-full grid grid-cols-8 bg-slate-500 text-white font-semibold text-xl text-center">
+    <div className="w-full flex flex-col md:grid md:grid-cols-8 bg-slate-500 text-white font-semibold text-xl text-center">
       <div className="col-start-1 col-end-3 text-base">
         <Image
           width={100}
