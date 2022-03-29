@@ -57,6 +57,23 @@ const BuffetProvider = ({ children }) => {
     setCategorias(data);
   };
 
+  const obtenerImagenesApi = async () => {
+    const [resMenu, resBanner, resCarou, resCategoria, resLogo] =
+      await Promise.all([
+        axios("/api/menu"),
+        axios("/api/banner"),
+        axios("/api/carousel"),
+        axios("/api/categoriaimg"),
+        axios("api/logo"),
+      ]);
+
+    SetTagMenuimg(resMenu.data);
+    SetTagBannerimg(resBanner.data);
+    SetTagCarouselimg(resCarou.data);
+    SetTagCategoriaimg(resCategoria.data);
+    SetTagLogoimg(resLogo.data);
+  };
+
   const handleCategoriaClick = (id) => {
     const categoria = categorias.filter((cate) => cate.id === id);
     setCategoriaActual(categoria[0]);
@@ -87,6 +104,7 @@ const BuffetProvider = ({ children }) => {
   // cuando la pagina esta lista
   useEffect(() => {
     obtenerCategorias();
+    obtenerImagenesApi();
   }, []);
 
   useEffect(() => {

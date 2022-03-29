@@ -9,7 +9,7 @@ export default function Promociones({}) {
 
   const resultado = tagMenuimg.map((items) => items.public_id === id);
 
-  // console.log("resultado", resultado);
+  console.log("resultado", resultado);
 
   return (
     <div>
