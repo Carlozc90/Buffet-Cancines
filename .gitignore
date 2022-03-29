@@ -13,7 +13,6 @@
 /out/
 
 #data
-/prisma/data
 
 # production
 /build

@@ -120,6 +120,11 @@ const BuffetProvider = ({ children }) => {
         SetTagCarouselimg,
         SetTagCategoriaimg,
         SetTagLogoimg,
+        tagMenuimg,
+        tagBannerimg,
+        tagCarouselimg,
+        tagCategoriaimg,
+        tagLogoimg,
       }}
     >
       {children}

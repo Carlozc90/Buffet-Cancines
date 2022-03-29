@@ -1,7 +1,8 @@
+import useBuffet from "../hooks/useBuffet";
 import Layout from "../layout/Layout";
 
-export default function Promociones({ lenguajes }) {
-  console.log(lenguajes, "imagenes");
+export default function Promociones({}) {
+  const { tagMenuimg } = useBuffet();
 
   return (
     <div>
