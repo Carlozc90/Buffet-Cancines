@@ -1,5 +1,6 @@
 import Image from "next/image";
-const Banner = ({ banner }) => {
+
+const Banner = ({ banner, imagen }) => {
   return (
     <div
       className="overflow-hidden rounded-3xl relative mx-6"
@@ -8,7 +9,7 @@ const Banner = ({ banner }) => {
       }}
     >
       <Image
-        src={`/assets/img/banner/${banner}.jpg`}
+        src={banner === "1" ? imagen[0].secure_url : imagen[1].secure_url}
         layout="fill"
         alt="imagen"
         priority={true}

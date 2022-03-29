@@ -27,7 +27,7 @@ const Header = () => {
         <div className="flex justify-center items-center  ">
           {[
             ["carta", "/carta"],
-            ["promociones", "/promociones"],
+            ["promociones", "/"],
             ["contacto", "/contacto"],
           ].map(([title, url]) => (
             <button

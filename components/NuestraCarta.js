@@ -10,9 +10,10 @@ const NuestraCarta = () => {
         Nuestra Carta
       </p>
       <div className=" m-6 grid grid-cols-4 gap-4">
-        {categorias.map((cat) => (
-          <Producto padre={"nuestracarta"} producto={cat} key={cat.id} />
-        ))}
+        {categorias &&
+          categorias.map((cat) => (
+            <Producto padre={"nuestracarta"} producto={cat} key={cat.id} />
+          ))}
       </div>
     </>
   );

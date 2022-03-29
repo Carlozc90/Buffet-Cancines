@@ -39,17 +39,17 @@ const lomasPedido = [
 
 const BuffetProvider = ({ children }) => {
   const [categorias, setCategorias] = useState([]);
-  const [categoriaActual, setCategoriaActual] = useState({});
+  const [categoriaActual, setCategoriaActual] = useState();
   const [modal, setModal] = useState(false);
   const [producto, setProducto] = useState([]);
   const [orden, setOrden] = useState([]);
   const [total, setTotal] = useState(0);
 
   const [tagMenuimg, SetTagMenuimg] = useState([]);
-  const [tagBannerimg, SetTagBannerimg] = useState([]);
-  const [tagCarouselimg, SetTagCarouselimg] = useState([]);
+  const [tagBannerimg, SetTagBannerimg] = useState();
+  const [tagCarouselimg, SetTagCarouselimg] = useState();
   const [tagCategoriaimg, SetTagCategoriaimg] = useState([]);
-  const [tagLogoimg, SetTagLogoimg] = useState([]);
+  const [tagLogoimg, SetTagLogoimg] = useState();
 
   // funciones
   const obtenerCategorias = async () => {
@@ -103,8 +103,8 @@ const BuffetProvider = ({ children }) => {
 
   // cuando la pagina esta lista
   useEffect(() => {
-    obtenerCategorias();
     obtenerImagenesApi();
+    obtenerCategorias();
   }, []);
 
   useEffect(() => {
@@ -133,11 +133,6 @@ const BuffetProvider = ({ children }) => {
         handleAgregarOrden,
         orden,
         total,
-        SetTagMenuimg,
-        SetTagBannerimg,
-        SetTagCarouselimg,
-        SetTagCategoriaimg,
-        SetTagLogoimg,
         tagMenuimg,
         tagBannerimg,
         tagCarouselimg,

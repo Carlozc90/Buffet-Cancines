@@ -1,5 +1,6 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
+import useBuffet from "../hooks/useBuffet";
 
 const Carrucel = () => {
   const imagen = [
@@ -8,6 +9,8 @@ const Carrucel = () => {
     "CarouselChaufa.jpg",
     "CarouselSecoFrejoles.jpg",
   ];
+
+  const { tagCarouselimg } = useBuffet();
   return (
     <Carousel
       autoPlay
@@ -21,16 +24,16 @@ const Carrucel = () => {
       emulateTouch
     >
       <div>
-        <img src={`/assets/img/carousel/${imagen[0]}`} />
+        <img src={tagCarouselimg[0].secure_url} />
       </div>
       <div>
-        <img src={`/assets/img/carousel/${imagen[1]}`} />
+        <img src={tagCarouselimg[1].secure_url} />
       </div>
       <div>
-        <img src={`/assets/img/carousel/${imagen[2]}`} />
+        <img src={tagCarouselimg[2].secure_url} />
       </div>
       <div>
-        <img src={`/assets/img/carousel/${imagen[3]}`} />
+        <img src={tagCarouselimg[3].secure_url} />
       </div>
     </Carousel>
   );

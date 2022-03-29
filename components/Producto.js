@@ -1,11 +1,36 @@
 import Image from "next/image";
-import { formatearDinero } from "../helpers";
+import { formatearDinero, obtenerNombre } from "../helpers";
 import useBuffet from "../hooks/useBuffet";
 
 const Producto = ({ producto, padre }) => {
-  const { id, nombre, precio, imagen, descripcion, icono } = producto;
-  const { handleChangeModal, handleProducto } = useBuffet();
-  // console.log(padre);
+  const {
+    id,
+    nombre,
+    precio,
+    imagen: nombreimgProducto,
+    descripcion,
+    icono: imgCatalogo,
+  } = producto;
+  const {
+    handleChangeModal,
+    handleProducto,
+    tagMenuimg,
+    tagBannerimg,
+    tagCarouselimg,
+    tagCategoriaimg,
+    tagLogoimg,
+    lomasPedido,
+  } = useBuffet();
+
+  const obtenerUrl = (obj, array) => {
+    // console.log("1", obj);
+    // console.log("2", array);
+    const respuesta = array.find((items) => obtenerNombre(items) === obj);
+    const { secure_url: res } = respuesta;
+
+    return res;
+  };
+
   return (
     <div className="border p-3 text-center rounded">
       <Image
@@ -13,8 +38,8 @@ const Producto = ({ producto, padre }) => {
         height={300}
         src={
           padre === "nuestracarta"
-            ? `/assets/img/categoria/${icono}.jpg`
-            : `/assets/img/menu/${imagen}.jpg`
+            ? obtenerUrl(imgCatalogo, tagCategoriaimg)
+            : obtenerUrl(nombreimgProducto, tagMenuimg)
         }
         alt={`imagen ${nombre}`}
         className={"rounded-2xl"}
