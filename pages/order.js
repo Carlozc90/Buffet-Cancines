@@ -5,7 +5,6 @@ import { formatearDinero } from "../helpers";
 
 export default function Order() {
   const { orden, total } = useBuffet();
-  console.log(orden);
   return (
     <Layout>
       <div className="w-screen h-[150px] bg-gray-900 flex justify-center items-center text-center">

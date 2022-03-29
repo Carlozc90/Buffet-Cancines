@@ -23,22 +23,7 @@ export default function Home({
 
   useEffect(() => {
     SetTagMenuimg(MenuApi.resources);
-    SetTagBannerimg(BannerApi.resources);
-    SetTagCarouselimg(CarouselApi.resources);
-    SetTagCategoriaimg(CategoriaApi.resources);
-    SetTagLogoimg(LogoApi.resources);
-  }, [
-    BannerApi.resources,
-    CarouselApi.resources,
-    CategoriaApi.resources,
-    LogoApi.resources,
-    MenuApi,
-    SetTagBannerimg,
-    SetTagCarouselimg,
-    SetTagCategoriaimg,
-    SetTagLogoimg,
-    SetTagMenuimg,
-  ]);
+  }, [MenuApi, SetTagMenuimg]);
 
   return (
     <div>
@@ -49,6 +34,7 @@ export default function Home({
         <NuestraCarta />
         <Banner banner={"banner82"} />
       </Layout>
+      |
     </div>
   );
 }
