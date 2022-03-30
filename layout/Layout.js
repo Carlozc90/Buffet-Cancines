@@ -16,6 +16,17 @@ export default function Layout({ children, pagina }) {
   const { modal } = useBuffet();
   const router = useRouter();
   const { route } = router;
+
+  const customStyles = {
+    content: {
+      top: "50%",
+      left: "50%",
+      right: "auto",
+      bottom: "auto",
+      marginRight: "-50%",
+      transform: "translate(-50%, -50%)",
+    },
+  };
   return (
     <>
       <Head>
@@ -46,7 +57,7 @@ export default function Layout({ children, pagina }) {
       </div>
 
       {modal && (
-        <Modal isOpen={modal} ariaHideApp={false}>
+        <Modal isOpen={modal} ariaHideApp={false} style={customStyles}>
           <CompoModal padre={"nuestracarta"} />
         </Modal>
       )}

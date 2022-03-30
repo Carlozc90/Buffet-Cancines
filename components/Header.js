@@ -10,7 +10,9 @@ const Header = () => {
   return (
     <header className="w-full h-[100px] bg-gradient-to-r from-red-600 to-red-500">
       <button
-        className="ml-10 absolute z-50"
+        className={`ml-10 absolute  ${
+          router.pathname === "/carta" ? "z-[0]" : "z-[1]"
+        } `}
         onClick={() => {
           router.push("/");
         }}

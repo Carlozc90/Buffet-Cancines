@@ -23,7 +23,7 @@ const CompoModal = ({ padre }) => {
 
   return (
     <div>
-      <div className="flex items-center">
+      <div className="flex items-center ">
         <button type="button" className="flex mb-4" onClick={handleChangeModal}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -43,14 +43,17 @@ const CompoModal = ({ padre }) => {
         </button>
       </div>
       <div className="grid grid-cols-2 gap-10">
-        <Image
-          width={250}
-          height={300}
-          src={obtenerUrlhelper(imagen, tagMenuimg)}
-          alt={`imagen ${nombre}`}
-          className={"rounded-2xl"}
-        />
-        <div className="">
+        <div className="flex justify-center">
+          <Image
+            width={250}
+            height={300}
+            src={obtenerUrlhelper(imagen, tagMenuimg)}
+            alt={`imagen ${nombre}`}
+            className={"rounded-2xl"}
+          />
+        </div>
+
+        <div>
           <h1 className="uppercase text-red-600 font-bold text-3xl">
             {nombre}
           </h1>
